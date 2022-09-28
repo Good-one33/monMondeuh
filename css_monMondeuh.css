@@ -1,0 +1,46 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    --job-height:100px;
+    --job-width:100px;
+}
+
+
+.mainContainer, .jobs, .job, .jobDisplay{
+  display: flex;
+  padding: 5px;
+  border-radius: 10px;
+} 
+
+.mainContainer{
+  flex-direction: column;
+  height: 100vh;
+  background-color:rgb(60, 99, 86);  
+}
+
+.jobs{    
+    flex-wrap: nowrap;
+    height: calc(var(--job-heigh) + 10px);
+    background-color: aquamarine;
+    margin: 20px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    flex-shrink: 0;
+}
+
+.job{
+    height: var(--job-height);
+    width: var(--job-width);
+    background-color: rgb(218, 199, 97);
+    margin: 10px;
+    flex-shrink: 0;
+}
+
+.jobDisplay{
+    background-color: rgb(218, 199, 97);
+    margin: 20px;
+    flex-grow: 1;    
+}
