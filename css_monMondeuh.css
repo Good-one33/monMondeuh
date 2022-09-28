@@ -13,18 +13,22 @@
   display: flex;
   padding: 5px;
   border-radius: 10px;
+  
+
 } 
 
 .mainContainer{
   flex-direction: column;
   height: 100vh;
-  background-color:rgb(60, 99, 86);  
+  background-color:rgb(41, 43, 42);  
+  
+ 
 }
 
 .jobs{    
     flex-wrap: nowrap;
     height: calc(var(--job-heigh) + 10px);
-    background-color: aquamarine;
+    background-color: rgb(96, 123, 42);
     margin: 20px;
     overflow-x: auto;
     overflow-y: hidden;
@@ -34,13 +38,15 @@
 .job{
     height: var(--job-height);
     width: var(--job-width);
-    background-color: rgb(218, 199, 97);
+    background-color: rgb(34, 197, 165);
     margin: 10px;
     flex-shrink: 0;
 }
 
 .jobDisplay{
-    background-color: rgb(218, 199, 97);
+    background-color: rgb(37, 138, 159);
     margin: 20px;
-    flex-grow: 1;    
+    flex-grow: 1;   
+    justify-content: center;
+    align-items: center; 
 }

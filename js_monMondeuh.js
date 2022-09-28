@@ -6,9 +6,9 @@ const jobDisplayDiv = document.querySelector('.jobDisplay')
 let JobsRender = ()=>{
 let jobs = Array.from(jobsDiv.children)  //putting all job's divs in an array 
 jobs.forEach(job => {                      // adding some attributes to each item in the list 
-let jobId = job.getAttribute('id')
+let jobId = job.getAttribute('id')  
 job.innerText = jobId 
-job.setAttribute('onclick','f'+jobId +'()')    // adding the function which take care of evrything in the JobDisplay div
+job.setAttribute('onclick','f'+jobId +'()')    // adding the function handler for each job's box , this will control evrything in the JobDisplay div
 
 })
 }
@@ -20,44 +20,9 @@ JobsRender()
 
 
 
-
-customElements.define('my-paragraph',
-  class extends HTMLElement {
-    constructor() {
-      super();
-      let template = document.getElementById('my-paragraph');
-      let templateContent = template.content;
-
-      const shadowRoot = this.attachShadow({mode: 'open'});
-      shadowRoot.appendChild(templateContent.cloneNode(true));
-    
-    }
-  }
-);
-
-customElements.define('element-details',
-  class extends HTMLElement {
-    constructor() {
-      super();
-      const template = document
-        .getElementById('element-details-template')
-        .content;
-      const shadowRoot = this.attachShadow({mode: 'open'});
-      shadowRoot.appendChild(template.cloneNode(true));
-    }
-  }
-);
-
-
-
-
-
-
-
-
-
 //::::::::::::::::::::::::::::----functions-----::::::::::::::::::::::::::::::::
 
+//each function here control evrything in the diplay item , each fucntion for each job ( box )
 //................................. ---f0---.....................................
 let f0 = ()=>{
   console.log('f0')
@@ -119,7 +84,18 @@ let f0 = ()=>{
 let f1 = ()=>{
     console.log('f1')
     document.querySelector('#jobStyle').setAttribute('href','css/s'+1+'.css')
-    jobDisplayDiv.innerHTML = ` `
+    jobDisplayDiv.innerHTML = `<button> red </button>
+    <button>blue</button> `
+
+    let jobDisplay = document.querySelector('.jobDisplay')
+        let btn = document.querySelectorAll('button')
+
+        btn[0].addEventListener('click', ()=> {
+            jobDisplay.classList.toggle('red')
+        })
+        btn[1].addEventListener('click', ()=> {
+            jobDisplay.classList.toggle('blue')
+        })
 }
 
 //................................. ---f2---.....................................
@@ -128,4 +104,11 @@ let f2 = ()=>{
     document.querySelector('#jobStyle').setAttribute('href','css/s'+2+'.css')
     jobDisplayDiv.innerHTML = ` `
 }
-//::::
+
+//................................. ---f3---.....................................
+
+let f3 = ()=>{
+  console.log('f2')
+  document.querySelector('#jobStyle').setAttribute('href','css/s'+2+'.css')
+  jobDisplayDiv.innerHTML = ` `
+}

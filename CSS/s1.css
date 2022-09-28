@@ -1,7 +1,19 @@
 .jobDisplay{
-    background-color:  rgb(87, 218, 61);
+    background-color:  rgb(158, 54, 127);
 }
 
-.job{
-    background-color: blueviolet;
+
+.jobDisplay{
+    background-color: aquamarine;
+    flex-direction: column;
 }
+
+
+.red{
+    background-color: red;
+}
+
+.blue{
+    background-color: blue;
+}
+
