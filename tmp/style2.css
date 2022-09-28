@@ -1,0 +1,282 @@
+.mainContainer,
+.myItemList,
+.myItemDisplay,
+.item,
+.selectedItem {
+  border: black solid 2px;
+  border-radius: 8px;
+  padding: 10px;
+  margin: 5px;
+}
+
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  height: 500px;
+  background-color: blue;
+}
+.myItemList {
+  height: 100px;
+  background-color: green;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+.myItemDisplay {
+  height: 300px;
+  background-color: rgb(31, 133, 192);
+}
+
+.item {
+  background-color: red;
+  width: 50px;
+  height: 50px;
+}
+
+.item:hover {
+  background-color: rgb(17, 95, 72);
+  color: rgb(253, 253, 253);
+}
+.selectedItem {
+  background-color: rgb(171, 204, 52);
+  width: 50px;
+  height: 50px;
+  box-shadow: 5px 10px 20px black;
+}
+
+
+/* :::::::::::::::::::  today work ::::::::::::::::::::::::::*/
+.fakeBody,
+.fakeBody::before,
+.fakeBody::after {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--background-color);
+ 
+  --icon-size: 2rem;
+  --indicator-spacing:calc(var(--icon-size) / 8);
+  --nav-item-padding: calc(var(--icon-size)/ 2);
+  --background-color: green;
+  --border-radius: calc(var(--icon-size) / 4);
+  --position:2;
+ 
+  
+
+}
+
+
+
+
+
+.navbar-container {
+  background-color: white;
+  border-radius:  var(--border-radius);
+  width: max-content;
+  margin: 50px auto;
+  padding: 0  calc(var(--nav-item-padding) * 1.5);
+}
+
+.list {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  }
+
+.list a {
+  color: black;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding:  var(--nav-item-padding);
+ 
+}
+
+.list .text {
+  font-size: 0.8em;
+  opacity: 0;
+  pointer-events: none;
+  transition:  500ms ease-in-out;
+  position: absolute;
+  bottom: calc(.5 * var(--nav-item-padding));
+  transform: translateY(50%);
+ 
+ 
+}
+
+.list .icon{
+  position: relative; 
+  transform: 250ms ease-in-out;
+}
+
+
+.list .icon svg {
+  fill: currentColor;
+  width: var(--icon-size);
+  height: var(--icon-size);
+  display: block;
+}
+
+.list .active .text {
+  pointer-events: all;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+.list .active .icon{
+  transform: translateY(calc(-50% - var(--nav-item-padding)));
+}
+
+
+
+
+
+.navbar-container {
+  position: relative;
+}
+
+
+.list {
+  position: relative;
+ }
+
+.indicator{
+position: absolute;
+left:calc(var(--position, 0) * (var(--icon-size) + var(--nav-item-padding) * 2 ));
+transition:250mxs ease-in-out;
+}
+
+.indicator::after,
+.indicator::before{
+  content: "";
+  position: absolute;
+  border-radius: 100%;  
+}
+.indicator::after{
+  background-color: rgb(31, 98, 153);
+  width: calc(var(--icon-size)* 2 );
+  height: calc(var(--icon-size)* 2 );
+  top: calc( -1 * var(--icon-size));
+  }
+.indicator::before{
+  background-color: green;
+  width: calc((var(--icon-size) + var(--indicator-spacing))* 2 );
+  height: calc((var(--icon-size) + var(--indicator-spacing))* 2 );
+  top: calc( -1 * var(--icon-size) - var(--indicator-spacing));
+  left: calc( -1 *  var(--indicator-spacing));
+}
+
+
+.corners::before{
+  content: "";
+  box-sizing: content-box;
+  position:absolute;
+  width: var(--border-radius);
+  height: var(--border-radius);
+  background-color: white;
+  z-index: 1;
+  top: calc(-1 * var(--indicator-spacing));
+  left: calc(.2 * var(--indicator-spacing));
+  transform: translateX(-100%);
+  border-top-right-radius: 100%;
+  border-width: calc(var(--indicator-spacing));
+  border-color: green;
+  border-style: solid;
+  border-bottom: none;
+  border-left: none;
+}
+
+.corners::after{
+  content: "";
+  box-sizing: content-box;
+  position:absolute;
+  width: var(--border-radius);
+  height: var(--border-radius);
+  background-color: white;
+  z-index: 1;
+  top: calc(-1 * var(--indicator-spacing));
+  left: calc(var(--icon-size) * 2 + -.2 * var(--indicator-spacing));
+ 
+  border-top-left-radius: 100%;
+  border-width: calc(var(--indicator-spacing));
+  border-color: green;
+  border-style: solid;
+  border-bottom: none;
+  border-right: none;
+}
+
+
+
+
+
+
+.myItemDisplay {
+  background-color: green;
+  display: flex;
+}
+
+
+.container_1{
+  background-color:rgb(38, 126, 129);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content:center;
+  flex-direction: column;
+  align-items:center;
+  position: relative; 
+  --cercle-width: 20px;
+  --cercle-height: 20px;
+  --cercle-position: 0;
+  --play-state: paused  ;
+  --time:1s;
+  }
+
+
+  .line{
+    margin-top: 40px;
+    position: relative;
+    background-color: rgb(128 46 185);
+    border-radius: 3px;
+    width:400px;
+    height: 10px; 
+  }
+
+  .cercle{
+    
+    position: absolute;
+    background-color:  rgb(128 46 185);
+    width:var(--cercle-width);
+    height: var(--cercle-height);  
+    transform:   translate( calc(var(--cercle-width) / -2 + 100px * var(--cercle-position)) ,  calc(var(--cercle-height) / -4)  );
+    border-radius: 100%;
+    transition: transform 1s ease-in-out;
+    
+  }
+
+  .line2{
+    margin-top: 40px;
+    position: relative;
+    background-color: rgb(185, 46, 166);
+    border-radius: 3px;
+    width: 20px;
+    height: 10px;
+    color: red;   
+    animation: my-animation 1000ms  var(--play-state)   infinite ; 
+  }
+
+
+  
+
+  @keyframes my-animation {
+    100%{ transform: rotateZ(5turn)}     
+  }
+
+  button::after {
+    content: var(--tooltip-string);
+    color: var(--tooltip-color);
+    font-size: var(--tooltip-font-size);
+  }
