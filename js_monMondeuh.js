@@ -16,14 +16,11 @@ job.setAttribute('onclick','f'+jobId +'()')    // adding the function handler fo
 JobsRender()
 
 
-
- 
-
-
 //::::::::::::::::::::::::::::----functions-----::::::::::::::::::::::::::::::::
 
 //each function here control evrything in the jobDisplay, each fucntion for each job ( box )
 //................................. ---f0---.....................................
+
 let f0 = ()=>{
   console.log('f0')
   document.querySelector('#jobStyle').setAttribute('href','css/s'+0+'.css')
@@ -78,7 +75,6 @@ let f0 = ()=>{
 
    
 }
-
 
 //................................. ---f1---.....................................
 let f1 = ()=>{
