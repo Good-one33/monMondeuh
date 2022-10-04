@@ -13,8 +13,6 @@
   display: flex;
   padding: 5px;
   border-radius: 10px;
-  
-
 } 
 
 .mainContainer{
@@ -28,8 +26,9 @@
 .jobs{    
     flex-wrap: nowrap;
     height: calc(var(--job-heigh) + 10px);
-    background-color: rgb(96, 123, 42);
-    margin: 20px;
+    /* background-color: rgb(96, 123, 42); */
+    /* border-bottom: solid rgb(157, 177, 157) 2px ; */
+    /* border-radius: 0%; */
     overflow-x: auto;
     overflow-y: hidden;
     flex-shrink: 0;
