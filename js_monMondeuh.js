@@ -17,12 +17,12 @@ JobsRender()
 
 
 
-
+ 
 
 
 //::::::::::::::::::::::::::::----functions-----::::::::::::::::::::::::::::::::
 
-//each function here control evrything in the diplay item , each fucntion for each job ( box )
+//each function here control evrything in the jobDisplay, each fucntion for each job ( box )
 //................................. ---f0---.....................................
 let f0 = ()=>{
   console.log('f0')
