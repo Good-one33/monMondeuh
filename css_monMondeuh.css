@@ -49,3 +49,15 @@
     justify-content: center;
     align-items: center; 
 }
+
+
+.selected{
+    background-color: rgb(128, 165, 42);
+    animation: blinker 0.5s linear ;
+  }
+  
+  @keyframes blinker {
+    50% {
+      opacity: 0;
+    }
+  }
