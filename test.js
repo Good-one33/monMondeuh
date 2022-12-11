@@ -32,10 +32,9 @@ it exposes a map of strings  with an entry for each  data-* attribute
 dataset will return DOMStringMap objet { data1: val1, data2, val2}
 div.dataset.data1 = otherval    this will change the value of data1   
 js convert dashes  to comelcase 
-to remove the attribue  we can sue div.removeAttribute('data-name')
+to remove the attribue  we can use div.removeAttribute('data-name')
 or we can use delete 
 */
-
 
 const btns = document.querySelectorAll('.control>button')
 const blocks = document.querySelectorAll('.block')
@@ -47,6 +46,17 @@ btns.forEach( btn =>{
         })
         blocks[btn.id].style.display = "block"
     })
+})
+
+
+
+const staticCercleHolder = document.querySelectorAll(".staticCerle")
+staticCercleHolder.forEach(staticCercle =>{
+    console.log((staticCercle.dataset.columnOrder * 100) - 10)
+    let val = (staticCercle.dataset.columnOrder * 100) -10
+    staticCercle.style.transform = "translate(" + val+ "px ,-5px )"  
+ 
+    
 })
 
 
