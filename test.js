@@ -35,11 +35,9 @@ js convert dashes  to comelcase
 to remove the attribue  we can use div.removeAttribute('data-name')
 or we can use delete 
 */
-
 const navigationContainer = document.querySelectorAll(".navigContainer")
 const staticElements = document.querySelectorAll(".staticElement")
 const blocks = document.querySelectorAll('.block')   
-
 
 staticElements.forEach(staticElement =>{
     //positioning the static element
