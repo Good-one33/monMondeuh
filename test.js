@@ -36,27 +36,30 @@ to remove the attribue  we can use div.removeAttribute('data-name')
 or we can use delete 
 */
 
-const btns = document.querySelectorAll('.control>button')
-const blocks = document.querySelectorAll('.block')
+const navigationContainer = document.querySelectorAll(".navigContainer")
+const staticElements = document.querySelectorAll(".staticElement")
+const blocks = document.querySelectorAll('.block')   
 
-btns.forEach( btn =>{
-    btn.addEventListener('click', ()=>{
+
+staticElements.forEach(staticElement =>{
+    //positioning the static element
+    let val = (staticElement.dataset.elementOrder * 100) -10
+    staticElement.style.transform = "translate(" + val+ "px ,-5px )"  
+    //click Hanler for the static element
+    staticElement.addEventListener('click', ()=>{
+        console.log('static Element '+staticElement.dataset.elementOrder)
+        navigationContainer[0].style.setProperty("--moving-element-position", staticElement.dataset.elementOrder)
+        console.log('moving Element position '+navigationContainer[0].style.getPropertyValue("--moving-element-position"))
+        //displaying the right block 
         blocks.forEach(block =>{ 
             block.style.display = "none"           
         })
-        blocks[btn.id].style.display = "block"
+        blocks[navigationContainer[0].style.getPropertyValue("--moving-element-position")].style.display = "block"
     })
-})
+   
+   
 
 
-
-const staticCercleHolder = document.querySelectorAll(".staticCerle")
-staticCercleHolder.forEach(staticCercle =>{
-    console.log((staticCercle.dataset.columnOrder * 100) - 10)
-    let val = (staticCercle.dataset.columnOrder * 100) -10
-    staticCercle.style.transform = "translate(" + val+ "px ,-5px )"  
- 
-    
 })
 
 

@@ -196,9 +196,9 @@
     /* border: solid orangered 3px; */
     height: 100px;
     position: relative; 
-    --cercle-width: 20px;
-    --cercle-height: 20px;
-    --cercle-position: 0;
+    --element-width: 20px;
+    --element-height: 20px;
+    --moving-element-position: 4;
     --stage-line-height:40px;
     --play-state: paused ;
     --time:1s;
@@ -211,27 +211,28 @@
     /* border: solid orangered 1px; */
     background-color: rgb(97, 14, 79);
     border-radius: 15px;
-    height:calc( var(--cercle-height) * 0.5 );
+    height:calc( var(--element-height) * 0.5 );
     width: 400px;
 }
 
-.staticCerle{   
+.staticElement{   
     position: absolute;
     background-color: rgb(97, 14, 79);
     border-radius: 100px; 
-    height: var(--cercle-height);
-    width: var(--cercle-width);
+    height: calc(var(--element-height) * 1);
+    width: var(--element-width);
 }
 
-.movingCercle{
+.movingElement{
     position: absolute;
     z-index: 1;
     border: solid rgb(61, 158, 32) 1px;
     background-color: brown;
     border-radius: 100px; 
-    height: var(--cercle-height);
-    width: var(--cercle-width);
-    transform:   translate( calc((var(--cercle-width) / -2) + 100px * var(--cercle-position)) ,  calc(var(--cercle-height) / -4)  );
+    height: calc(var(--element-height) * 1);
+    width: var(--element-width);
+    transform:   translate( calc((var(--element-width) / -2) + 100px * var(--moving-element-position)) ,  calc(var(--element-height) / -4)  );
+    transition: transform 300ms ease-in-out;
 }
 
 
