@@ -168,10 +168,12 @@
     right: 1rem;
  }
 
- .container{
+ .containerOne{
+    /* border: rgb(255, 0, 221) solid 2px; */
     display: flex;
+    padding: 0vh 4vw  0vh 4vw;
     height: 100vh;
-    width: 100wh;
+    /* width: 100%; */
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -179,44 +181,50 @@
 
 
   .block{
-      width:90%;
-      height: 70%;
+    /* border: orange solid 2px; */
+      width:100%;
+      height: 100%;
          }
 
+  /* navigation controller*/  
 
 .navigContainer{
+    /* border: rgb(4, 19, 4) solid 4px; */
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 20px;
+    height: 5vh;
+    width:100vw;
+    /* margin: 20px; */
     /* border: solid orangered 3px; */
-    height: 100px;
     position: relative; 
+
     --element-width: 20px;
     --element-height: 20px;
-    --moving-element-position: 4;
-    --stage-line-height:40px;
-    --play-state: paused ;
-    --time:1s;
+    --moving-element-position: 0;
+    --time-line-width :400;
+    --time-line-jumpe :100;
 }
 
 .timeLine{
-    position: relative ;
-    padding: 0%;
-    margin: 0%;
+    position: relative ;   
     /* border: solid orangered 1px; */
     background-color: rgb(97, 14, 79);
+    color: rgb(25, 230, 25);
     border-radius: 15px;
     height:calc( var(--element-height) * 0.5 );
-    width: 400px;
+    width: calc(var(--time-line-width) * 1px);
 }
+
 
 .staticElement{   
     position: absolute;
     background-color: rgb(97, 14, 79);
     border-radius: 100px; 
-    height: calc(var(--element-height) * 1);
+    height: calc(var(--element-height) * 4);
     width: var(--element-width);
+    writing-mode: vertical-rl;
+  text-orientation: upright;
 }
 
 .movingElement{
@@ -227,7 +235,7 @@
     border-radius: 100px; 
     height: calc(var(--element-height) * 1);
     width: var(--element-width);
-    transform:   translate( calc((var(--element-width) / -2) + 100px * var(--moving-element-position)) ,  calc(var(--element-height) / -4)  );
+    transform:   translate( calc((var(--element-width) / -2) + var(--time-line-jumpe) * 1px * var(--moving-element-position)) ,  calc(var(--element-height) / -4)  );
     transition: transform 300ms ease-in-out;
 }
 
