@@ -24,8 +24,12 @@ buttons.forEach(button =>{
 const navigationContainer = document.querySelector(".navigContainer")
 const staticElements = document.querySelectorAll(".staticElement")
 const blocks = document.querySelectorAll('.block') 
+const years = document.querySelectorAll('.year')
+const diploms = document.querySelectorAll('.diplom')
+
 navigationContainer.style.setProperty("--time-line-width", navigationContainer.dataset.timeLineWidth)
 navigationContainer.style.setProperty("--time-line-jumpe", navigationContainer.dataset.timeLineWidth /(staticElements.length - 1) )
+
 
 staticElements.forEach(staticElement =>{
     //positioning the static element
@@ -41,6 +45,14 @@ staticElements.forEach(staticElement =>{
             block.style.display = "none"           
         })
         blocks[navigationContainer.style.getPropertyValue("--moving-element-position")].style.display = "block"
+        years.forEach(year =>{ 
+            year.style.display = "none"           
+        })
+        years[navigationContainer.style.getPropertyValue("--moving-element-position")].style.display = "block"
+        diploms.forEach(diplom =>{ 
+            diplom.style.display = "none"           
+        })
+        diploms[navigationContainer.style.getPropertyValue("--moving-element-position")].style.display = "block"
     })
 })
 

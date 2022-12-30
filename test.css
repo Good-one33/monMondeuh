@@ -190,20 +190,21 @@
 
 .navigContainer{
     /* border: rgb(4, 19, 4) solid 4px; */
+    position: relative; 
     display: flex;
     justify-content: center;
     align-items: center;
     height: 5vh;
     width:100vw;
-    /* margin: 20px; */
-    /* border: solid orangered 3px; */
-    position: relative; 
+    padding: 3%;
+   
 
     --element-width: 20px;
     --element-height: 20px;
     --moving-element-position: 0;
     --time-line-width :400;
     --time-line-jumpe :100;
+    --test: 'test';
 }
 
 .timeLine{
@@ -221,16 +222,40 @@
     position: absolute;
     background-color: rgb(97, 14, 79);
     border-radius: 100px; 
-    height: calc(var(--element-height) * 4);
+    height: calc(var(--element-height));
     width: var(--element-width);
     writing-mode: vertical-rl;
-  text-orientation: upright;
+    text-orientation: upright;
 }
 
+.info{  
+    /* border: solid rgb(168, 20, 82) 1px; */
+    position: absolute;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    color: rgb(10, 10, 10);
+    writing-mode:horizontal-tb;  
+}
+
+.year{  
+    transform:translateY(  calc((var(--element-width) * -1)))  translateX( 20%);
+    width: 150%;
+    height: 100%; 
+    font-size: 10pt;
+}
+.diplom{  
+    transform:translateY( var(--element-width)) translateX( 30%) ;
+    width: 200%;
+    height: 100%;  
+    font-size: 10pt;
+    }
+
+
 .movingElement{
+    border: solid rgb(61, 158, 32) 1px;
     position: absolute;
     z-index: 1;
-    border: solid rgb(61, 158, 32) 1px;
     background-color: brown;
     border-radius: 100px; 
     height: calc(var(--element-height) * 1);
@@ -238,8 +263,3 @@
     transform:   translate( calc((var(--element-width) / -2) + var(--time-line-jumpe) * 1px * var(--moving-element-position)) ,  calc(var(--element-height) / -4)  );
     transition: transform 300ms ease-in-out;
 }
-
-
-
-
-
