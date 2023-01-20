@@ -40,19 +40,19 @@ staticElements.forEach(staticElement =>{
         console.log('static Element '+staticElement.dataset.elementOrder)
         navigationContainer.style.setProperty("--moving-element-position", staticElement.dataset.elementOrder)
         console.log('moving Element position '+navigationContainer.style.getPropertyValue("--moving-element-position"))
-        //displaying the right block 
+        //displaying the right block (----> I will create a function to make this code more clean <----)
         blocks.forEach(block =>{ 
             block.style.display = "none"           
         })
         blocks[navigationContainer.style.getPropertyValue("--moving-element-position")].style.display = "block"
         years.forEach(year =>{ 
-            year.style.display = "none"           
+            year.style.opacity = "0.0"           
         })
-        years[navigationContainer.style.getPropertyValue("--moving-element-position")].style.display = "block"
+        years[navigationContainer.style.getPropertyValue("--moving-element-position")].style.opacity = "1"
         diploms.forEach(diplom =>{ 
-            diplom.style.display = "none"           
+            diplom.style.opacity = "0.0"          
         })
-        diploms[navigationContainer.style.getPropertyValue("--moving-element-position")].style.display = "block"
+        diploms[navigationContainer.style.getPropertyValue("--moving-element-position")].style.opacity = "1"
     })
 })
 
@@ -83,7 +83,7 @@ staticElements.forEach(staticElement =>{
 // '...'  spread operator   can use it pass elements of an array as arguments to a funcition    f(...array)        can ust it to copy an array   arr2 =[...arr1]  or contactenate    arr = [...array1, ...array2]  
 
 /*
-the dataset read-only property of the html element provides read/write accest to custom data attributes (data-*) on elements
+the dataset read-only property of the html element provides read/write access to custom data attributes (data-*) on elements
 it exposes a map of strings  with an entry for each  data-* attribute 
 
 dataset will return DOMStringMap objet { data1: val1, data2, val2}
