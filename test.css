@@ -112,8 +112,7 @@
 .carousel{
     width: 100%;
     height: 100%;
-    position: relative;
-   
+    position: relative; 
 }
 
 .carousel > ul{
@@ -269,4 +268,36 @@
     width: var(--element-width);
     transform:   translate( calc((var(--element-width) / -2) + var(--time-line-jumpe) * 1px * var(--moving-element-position)) ,  calc(var(--element-height) / -4)  );
     transition: transform 300ms ease-in-out;
+}
+  /* Header*/  
+
+.Header{
+    /* border: red 2px solid; */
+    position: sticky;
+    top:2px;
+    z-index: 4;
+    display: flex;
+    justify-content: left;
+    margin: 0%;
+    padding:0%;
+}
+.Header ul {
+    /* border: rgb(84, 140, 175) 2px solid; */
+    display: flex;
+    width: 20%;
+    justify-content: space-between;
+    list-style: none;
+    margin: 0%;
+    padding: 0%;
+}
+.Header ul li{
+    border: rgb(80, 210, 136) 2px solid;
+    border-radius: 40px;
+    background-color: rgb(106, 149, 134);
+    padding-inline: 10px;
+    transition: all 200ms ease-in-out;    
+}
+.Header ul li:hover{
+    background-color: rgb(11, 130, 88);
+    transform: translateY(10px);
 }
