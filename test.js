@@ -1,4 +1,15 @@
 
+
+// loading the bodymoving animation 
+var animation = bodymovin.loadAnimation({
+    container: document.getElementById("welcomeSVG"),
+    path: "source/Bodymovin/welcomeAnimation.json",
+    renderer: "svg",
+    loop: true,
+    autoplay: true,
+    name: "Demo ",
+  });
+
 // Carousel controller
 const buttons = document.querySelectorAll("[data-carousel-button]")  // working with data attribute is easier
 

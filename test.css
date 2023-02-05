@@ -257,7 +257,6 @@
     font-size: 10pt;
     }
 
-
 .movingElement{
     border: solid rgb(61, 158, 32) 1px;
     position: absolute;
@@ -274,7 +273,7 @@
 .Header{
     /* border: red 2px solid; */
     position: sticky;
-    top:2px;
+    top:0px;
     z-index: 4;
     display: flex;
     justify-content: left;
@@ -290,14 +289,25 @@
     margin: 0%;
     padding: 0%;
 }
-.Header ul li{
-    border: rgb(80, 210, 136) 2px solid;
+.Header ul li{   
     border-radius: 40px;
-    background-color: rgb(106, 149, 134);
+    height: 100%;
+    background-color: rgb(11, 130, 88);
     padding-inline: 10px;
-    transition: all 200ms ease-in-out;    
+    transition: all 200ms ease-in-out; 
 }
 .Header ul li:hover{
-    background-color: rgb(11, 130, 88);
+    /* border: rgb(5, 45, 63) 2px solid; */
+    background-color: rgb(12, 107, 129);
     transform: translateY(10px);
+}
+
+#welcomeSVG{
+  /* border: rgb(80, 210, 136) 2px solid; */
+  z-index:-1 ;
+  position: relative;
+  width: 100%;
+  height: 400px;
+  background-color: rgb(26, 24, 24);
+  /* border-radius: 10px; */
 }
