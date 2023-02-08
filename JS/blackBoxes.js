@@ -12,7 +12,7 @@ let jobs = Array.from(jobsDiv.children)
 
 jobs.forEach(job => {  
 job.innerText =  job.id    
-document.head.appendChild(document.createElement('script')).setAttribute('src','js/script_'+job.id +'.js')
+document.head.appendChild(document.createElement('script')).setAttribute('src','JS/modularJs/script_'+job.id +'.js')
 
 job.addEventListener('click',e=>{
 eval('f'+e.target.id+'()') // eval is not the best option but I will keep it for now !  

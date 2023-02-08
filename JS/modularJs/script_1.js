@@ -1,6 +1,6 @@
 let f1 = ()=>{
     console.log('f1')
-    document.querySelector('#jobStyle').setAttribute('href','css/s'+1+'.css')
+    document.querySelector('#jobStyle').setAttribute('href','CSS/modularCss/s'+1+'.css')
     jobDisplayDiv.innerHTML = `<button> red </button>
     <button>blue</button> `
 

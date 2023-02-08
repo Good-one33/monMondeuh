@@ -1,6 +1,6 @@
 let f2 = ()=>{
     console.log('f2')
-    document.querySelector('#jobStyle').setAttribute('href','css/s'+2+'.css')
+    document.querySelector('#jobStyle').setAttribute('href','CSS/modularCss/s'+2+'.css')
     jobDisplayDiv.innerHTML = `
         <div class="fakeBody">
       

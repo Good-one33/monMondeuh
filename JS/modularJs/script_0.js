@@ -3,7 +3,7 @@
 
 let f0 = ()=>{
     console.log('f0')
-    document.querySelector('#jobStyle').setAttribute('href','css/s'+0+'.css')
+    document.querySelector('#jobStyle').setAttribute('href','CSS/modularCss/s'+0+'.css')
     jobDisplayDiv.innerHTML = ` 
     <div class="control">
          <button id="btn_prv"  >previous</button> 
