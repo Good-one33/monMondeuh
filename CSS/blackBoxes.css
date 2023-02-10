@@ -99,12 +99,12 @@
   color: rgba(232, 8, 8, 0.775);
 }
 
-#welcomeSVG{
-/* border: rgb(80, 210, 136) 2px solid; */
-/* z-index:1 ; */
-position: relative;
-width: 100%;
-height: 400px;
-background-color: rgb(12, 12, 12);
-/* border-radius: 10px; */
+#bbWoelcomeSvgContainer{
+  /* border: rgb(80, 210, 136) 2px solid; */
+  /* z-index:4 ; */
+  position: relative;
+  width: 100%;
+  height: 400px;
+  background-color: rgb(239, 241, 241);
+  /* border-radius: 10px; */
 }

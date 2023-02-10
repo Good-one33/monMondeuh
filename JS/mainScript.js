@@ -2,7 +2,7 @@
 
 // loading the bodymoving animation 
 var animation = bodymovin.loadAnimation({
-    container: document.getElementById("welcomeSVG"),
+    container: document.getElementById("mainWelcomeSngContainer"),
     path: "source/Bodymovin/welcomeAnimation.json",
     renderer: "svg",
     loop: true,
