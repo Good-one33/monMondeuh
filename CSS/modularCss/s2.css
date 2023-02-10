@@ -1,4 +1,3 @@
-.mainContainer,
 .myItemList,
 .myItemDisplay,
 .item,
@@ -9,12 +8,11 @@
   margin: 5px;
 }
 
-.mainContainer {
+/* .mainContainer {
   display: flex;
   flex-direction: column;
   height: 500px;
-  background-color: blue;
-}
+} */
 .myItemList {
   height: 100px;
   background-color: green;
