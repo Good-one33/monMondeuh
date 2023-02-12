@@ -1,3 +1,4 @@
+// awsome icones
 
 // loading the bodymoving animation 
 var animation = bodymovin.loadAnimation({
