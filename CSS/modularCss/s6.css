@@ -16,3 +16,10 @@
 .pageContent{
   color: rgb(12, 11, 11);
 }
+
+
+#pc0{
+  /* font-family: 'Crimson Pro', serif; */
+  font-family: 'Noto Sans Symbols 2', cursive;
+  font-size: 20px;
+}

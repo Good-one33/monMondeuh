@@ -5,7 +5,7 @@ let f6 = ()=>{
     
     // this will load the html content
     jobDisplayDiv.innerHTML = `
-    <div id="pc0" class="pageContent font-effect-outline">
+    <div id="pc0" class="pageContent Literata  ">
       Here we go ! <br />
       I finaly did it, I always used to write but this time I made it
       public, I just wanted to improve my english I decided three days ago

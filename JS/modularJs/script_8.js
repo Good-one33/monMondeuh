@@ -8,7 +8,7 @@ let f8 = ()=>{
     <!-- page 3 _03_08_2021_-->
         <div id="pc3" class="pageContent">
           <img
-            src="/mon-site/Images/bebe_codding.JPG"
+            src="source/images/random/bebe_codding.JPG"
             alt="baby boy"
             width="300px"
             style="box-shadow: 10px 10px 15px grey"
