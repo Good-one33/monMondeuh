@@ -44,6 +44,7 @@
 
 .jobDisplay{
     background-color: rgb(37, 138, 159);
+    flex-direction: column;
     margin: 20px;
     flex-grow: 1;   
     justify-content: center;
@@ -99,7 +100,7 @@
   color: rgba(232, 8, 8, 0.775);
 }
 
-#bbWoelcomeSvgContainer{
+#bbWelcomeSvgContainer{
   /* border: rgb(80, 210, 136) 2px solid; */
   /* z-index:4 ; */
   position: relative;
@@ -111,5 +112,12 @@
 
 
 .red{
-  color: red;}
+  color: red;
+background-color: brown;}
+
  
+
+  #item{
+    height: 100px;
+  }
+
