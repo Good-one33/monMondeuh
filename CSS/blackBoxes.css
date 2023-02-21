@@ -48,7 +48,7 @@
     margin: 20px;
     flex-grow: 1;   
     justify-content: center;
-    align-items: center; 
+    align-items: center;     
 }
 
 
@@ -118,6 +118,8 @@ background-color: brown;}
  
 
   #item{
-    height: 100px;
+      height: 100px;   
   }
-
+.jobDisplay > h1,p {
+  text-align: center;
+}

@@ -20,28 +20,54 @@ let jobDisplayDiv = document.querySelector('.jobDisplay')
 */
 let jobs = Array.from(jobsDiv.children)   
 
+// adding bodymoving animation for each job according to it's class 
 jobs.forEach(job => {  
-job.innerText =  job.id
-// if(job.id == 6){
-//   job.classList.add('red')
-// } 
-document.head.appendChild(document.createElement('script')).setAttribute('src','JS/modularJs/script_'+job.id +'.js')
-let child = document.createElement('div').classList.add('item')  
+  job.innerText =  job.id
+  let container = document.getElementById(job.id);
+  let path 
+    if(job.classList.contains('code') ){
+       path = "https://maxst.icons8.com/vue-static/landings/animated-icons/icons/settings/settings.json";
+    }else if (job.classList.contains('play')){
+       path = "https://maxst.icons8.com/vue-static/landings/animated-icons/icons/pause/pause.json";
+    }else if (job.classList.contains('read')){
+       path = "https://maxst.icons8.com/vue-static/landings/animated-icons/icons/book/book.json";
+    }else {
+       path = "https://maxst.icons8.com/vue-static/landings/animated-icons/icons/adjust/adjust.json";
+    }
+    var jobAnimation = bodymovin.loadAnimation({
+      container: container,
+      path:path,                                                                              //"https://maxst.icons8.com/vue-static/landings/animated-icons/icons/pause/pause.json",
+      renderer: "svg",
+      loop: false,
+      autoplay: false,
+    });
+    jobAnimation.goToAndStop(14, true);
+    container.addEventListener('click', e => {
+      if(state === 'play') {
+        jobAnimation.playSegments([14, 27], true);
+        state = 'pause';
+      } else {
+        jobAnimation.playSegments([0, 14], true);
+        state = 'play';
+      }
+      console.log('target id '+ e.target.id)
+      eval('f'+container.id+'()') // eval is not the best option but I will keep it for now !!!!! 
+      jobs.forEach((job) => {  
+        job.classList.remove('selected')  //  flag the selected job with selected !
+         })
+        container.classList.toggle('selected') 
 
-job.addEventListener('click',e=>{ // each time we click on a job, we execute the function related to it 
-eval('f'+e.target.id+'()') // eval is not the best option but I will keep it for now !!!!!  
-jobs.forEach((job) => {  
-    job.classList.remove('selected')  //  flag the selected job with selected !
+    });
+
+  document.head.appendChild(document.createElement('script')).setAttribute('src','JS/modularJs/script_'+job.id +'.js')
+  let child = document.createElement('div').classList.add('item')  
 })
-e.target.classList.toggle('selected')
-})    
 
-})
 
+
+//the main page in black boxes 
 var container = document.getElementById('item');
 var state = 'play';
-
-
 var animationTest = bodymovin.loadAnimation({
   container: document.getElementById('item'),
   path:"https://maxst.icons8.com/vue-static/landings/animated-icons/icons/pause/pause.json",
@@ -50,8 +76,6 @@ var animationTest = bodymovin.loadAnimation({
   autoplay: false,
 });
 animationTest.goToAndStop(14, true);
-
-
 container.addEventListener('click', () => {
   if(state === 'play') {
    animationTest.playSegments([14, 27], true);
@@ -83,39 +107,3 @@ animationTest.addEventListener('complete', () => {
     jobDisplayDiv.lastChild.textContent = text;
   } else jobDisplayDiv.appendChild(p);
 })
-
-jobs.forEach(job => { 
-
-  // job.classList.add('red')
-  var container = document.getElementById(job.id);
-  var state = 'play';
-  let path = '';
-  if(job.id == 6 || job.id == 12 || job.id == 8 ){
-    path = "https://maxst.icons8.com/vue-static/landings/animated-icons/icons/settings/settings.json";
-  }else if (job.id == 7 || job.id == 1 || job.id == 5){
-    path = "https://maxst.icons8.com/vue-static/landings/animated-icons/icons/pause/pause.json";
-  }else if (job.id == 0 || job.id == 9 || job.id == 13){
-    path = "https://maxst.icons8.com/vue-static/landings/animated-icons/icons/book/book.json";
-  }else {
-    path = "https://maxst.icons8.com/vue-static/landings/animated-icons/icons/adjust/adjust.json";
-  }
-  var job6Animation = bodymovin.loadAnimation({
-    container: container,
-    path:path,                                                                              //"https://maxst.icons8.com/vue-static/landings/animated-icons/icons/pause/pause.json",
-    renderer: "svg",
-    loop: false,
-    autoplay: false,
-  });
-  job6Animation.goToAndStop(14, true);
-  container.addEventListener('click', () => {
-    if(state === 'play') {
-      job6Animation.playSegments([14, 27], true);
-      state = 'pause';
-    } else {
-      job6Animation.playSegments([0, 14], true);
-      state = 'play';
-    }
-  });
-
-
- })

@@ -12,7 +12,7 @@ let f12 = ()=>{
     `
 
     // this is the js code running for this job 
-    let loop = false;
+    let loop = true;
 
     var animationTen = bodymovin.loadAnimation({
         container: document.getElementById('item1'),
