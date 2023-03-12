@@ -17,10 +17,9 @@
 
 .mainContainer{
   flex-direction: column;
-  height: 100vh;
   background-color:rgb(41, 43, 42);  
-  
- 
+  border : yellowgreen solid 3px;
+  min-height: 100vh;
 }
 
 .jobs{    
@@ -48,7 +47,8 @@
     margin: 20px;
     flex-grow: 1;   
     justify-content: center;
-    align-items: center;     
+    align-items: center; 
+    border : rgb(205, 50, 192) solid 3px;
 }
 
 
