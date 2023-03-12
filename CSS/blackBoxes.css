@@ -110,12 +110,9 @@
   /* border-radius: 10px; */
 }
 
-
 .red{
   color: red;
 background-color: brown;}
-
- 
 
   #item{
       height: 100px;   
@@ -123,3 +120,4 @@ background-color: brown;}
 .jobDisplay > h1,p {
   text-align: center;
 }
+

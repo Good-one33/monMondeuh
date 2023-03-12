@@ -1,24 +1,8 @@
-.pageContent {
-  display: block;
-  padding: 20px;
-  align-items: center;
-  overflow: hidden;
-  background-color: #f7f7f7;
+.jobDisplay{
+  background-color: #0f495d;
   color: rgb(0, 0, 0);
-  font-family: Sentinel SSm A;
-  font-size: 16px;
-  justify-self: center;
-  width: 300px;
-  /* border: solid orange 4px; */
-  box-shadow: 15px 15px 40px rgb(31, 29, 29);
-  }
-
-.pageContent{
-  color: rgb(12, 11, 11);
-}
-
-.red{
-  color: red;
-  background-color: red;
-  border: 2px solid orange;
-}
+  padding:5% 30% 5% 30%;
+  flex-direction: column;
+  justify-content: center;
+  font-family: 'Alegreya', serif;
+ }

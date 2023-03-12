@@ -6,7 +6,7 @@ let f7 = ()=>{
     // this will load the html content
     jobDisplayDiv.innerHTML = `
     <!-- page 1 _07_06_21_-->
-    <div id="pc1" class="pageContent">
+    <div id="box1">
       I know I didn't write last two days, but if I didn't write here it
       means that I wrote somewhere else, yes of cours I do have an agenda.
       we all have some stuff that we don't really want to share with anyone
@@ -19,8 +19,7 @@ let f7 = ()=>{
       the RER I can sit down while keeping my posture stright I don't bow
       tho his majesty The Mobile Phone. <br />
 
-      <i
-        >é gros, tu exagères la ! tu t'es séparé de tes putaines d'applis
+      <i>é gros, tu exagères la ! tu t'es séparé de tes putaines d'applis
         quelques jours et tu commences dèja à te la raconter, ça va pas la
         tête ou quoi ! tu penses vraiment que je vais te laisser me priver
         de tous les plaisirs que le digital nous a offert? je te dis une

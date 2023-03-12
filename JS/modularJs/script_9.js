@@ -6,7 +6,7 @@ let f9= ()=>{
     // this will load the html content
     jobDisplayDiv.innerHTML = `
     <!-- page 4 _03_08_2021_-->
-        <div id="pc4" class="pageContent">
+        <div>
           <b
             >je me rappelle du mal,je me rappelle du bien , mais je me rappelle
             que tout va meiux quand je me rappelle de rien
