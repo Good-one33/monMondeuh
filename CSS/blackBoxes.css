@@ -4,8 +4,8 @@
 }
 
 :root{
-    --job-height:100px;
-    --job-width:100px;
+    --job-height:70px;
+    --job-width:70px;
 }
 
 
@@ -18,16 +18,12 @@
 .mainContainer{
   flex-direction: column;
   background-color:rgb(41, 43, 42);  
-  border : yellowgreen solid 3px;
   min-height: 100vh;
 }
 
 .jobs{    
     flex-wrap: nowrap;
     height: calc(var(--job-heigh) + 10px);
-    /* background-color: rgb(96, 123, 42); */
-    /* border-bottom: solid rgb(157, 177, 157) 2px ; */
-    /* border-radius: 0%; */
     overflow-x: auto;
     overflow-y: hidden;
     flex-shrink: 0;
@@ -48,9 +44,26 @@
     flex-grow: 1;   
     justify-content: center;
     align-items: center; 
-    border : rgb(205, 50, 192) solid 3px;
 }
 
+/* Mobile */
+.jobDisplay{ 
+  padding: 5%;
+}
+
+/* Tablet */
+@media (min-width:600px) {
+  .jobDisplay{ 
+    padding:5% 10% 5% 10%;
+  }
+}
+
+/* Desktop */
+@media (min-width:900px) {
+  .jobDisplay{ 
+    padding:5% 30% 5% 30%;
+  }
+}
 
 .selected{
     background-color: rgb(128, 165, 42);

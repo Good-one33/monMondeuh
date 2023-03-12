@@ -1,7 +1,6 @@
 .jobDisplay{
   background-color: #0f495d;
   color: rgb(0, 0, 0);
-  padding:5% 30% 5% 30%;
   flex-direction: column;
   justify-content: center;
   font-family: 'Alegreya', serif;
