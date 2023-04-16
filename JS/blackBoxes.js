@@ -57,10 +57,12 @@ jobs.forEach(job => {
       eval('f'+container.parentNode.id+'()') // eval is not the best option but I will keep it for now !!!!!       
       jobs.forEach((job) => {  
         job.children[0].parentNode.classList.remove('selected')  //  flag the selected job with selected !
-        job.children[1].classList.add('hide')
+        job.children[1].classList.remove('jobNbr')
+        
          })
         container.parentNode.classList.toggle('selected') 
-/        container.parentNode.children[1].classList.toggle('jobNbr')
+/       container.parentNode.children[1].classList.toggle('jobNbr')
+        container.parentNode.classList.add('alreadyChecked')
 
     });
 

@@ -43,11 +43,12 @@
 .hide{
   display: none;
 }
+.alreadyChecked{
+  border-bottom: solid rgb(154, 22, 30) 3px;
+}
 .jobNbr{
   display: flex;
   justify-content: center;
-  padding-bottom: 4px ;
-  border-bottom: solid rgb(146, 26, 58) 2px;
 }
 
 
