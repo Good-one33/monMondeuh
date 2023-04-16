@@ -22,8 +22,8 @@ let jobs = Array.from(jobsDiv.children)
 
 // adding bodymoving animation for each job according to it's class 
 jobs.forEach(job => {  
-  job.innerText =  job.id
-  let container = document.getElementById(job.id);
+  job.innerHTML ='<div class="animationContainer"></div> <div class="hide">'+job.id+'</div>';
+  let container = document.getElementById(job.id).children[0];
   let path 
     if(job.classList.contains('code') ){
        path = "https://maxst.icons8.com/vue-static/landings/animated-icons/icons/settings/settings.json";
@@ -42,6 +42,8 @@ jobs.forEach(job => {
       autoplay: false,
     });
     jobAnimation.goToAndStop(14, true);
+
+
     container.addEventListener('click', e => {
       if(state === 'play') {
         jobAnimation.playSegments([14, 27], true);
@@ -50,12 +52,15 @@ jobs.forEach(job => {
         jobAnimation.playSegments([0, 14], true);
         state = 'play';
       }
-      console.log('target id '+ e.target.id)
-      eval('f'+container.id+'()') // eval is not the best option but I will keep it for now !!!!! 
+
+      console.log('target parent id '+ container.parentNode.id)
+      eval('f'+container.parentNode.id+'()') // eval is not the best option but I will keep it for now !!!!!       
       jobs.forEach((job) => {  
-        job.classList.remove('selected')  //  flag the selected job with selected !
+        job.children[0].parentNode.classList.remove('selected')  //  flag the selected job with selected !
+        job.children[1].classList.add('hide')
          })
-        container.classList.toggle('selected') 
+        container.parentNode.classList.toggle('selected') 
+/        container.parentNode.children[1].classList.toggle('jobNbr')
 
     });
 

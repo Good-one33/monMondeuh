@@ -4,8 +4,8 @@
 }
 
 :root{
-    --job-height:100px;
-    --job-width:100px;
+    --job-height:80px;
+    --job-width:70px;
 }
 
 
@@ -19,8 +19,6 @@
   flex-direction: column;
   height: 100vh;
   background-color:rgb(41, 43, 42);  
-  
- 
 }
 
 .jobs{    
@@ -35,12 +33,27 @@
 }
 
 .job{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
     height: var(--job-height);
     width: var(--job-width);
     background-color: rgb(34, 197, 165);
     margin: 10px;
     flex-shrink: 0;
 }
+.hide{
+  display: none;
+}
+.jobNbr{
+  display: flex;
+  justify-content: center;
+  padding-bottom: 4px ;
+  border-bottom: solid rgb(146, 26, 58) 2px;
+}
+
+
 
 .jobDisplay{
     background-color: rgb(37, 138, 159);
