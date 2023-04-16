@@ -5,7 +5,7 @@ let f6 = ()=>{
     
     // this will load the html content
     jobDisplayDiv.innerHTML = `
-    <div id="pc0" class="pageContent Literata  ">
+    <div>
       Here we go ! <br />
       I finaly did it, I always used to write but this time I made it
       public, I just wanted to improve my english I decided three days ago
@@ -14,7 +14,9 @@ let f6 = ()=>{
       ever I am, even if I don't really know what to talk about but I do
       believe that my minde will neveer let me out of ideas it will bring me
       happyness, all what he is asking for is <b> Thrust</b>
-    </div>`
+    </div>
+    `
+    
 
     // this is the js code running for this job 
 

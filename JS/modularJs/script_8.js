@@ -1,18 +1,19 @@
 let f8 = ()=>{
     console.log('f8 is running')
     // this will load the style for the job 
-    document.querySelector('#jobStyle').setAttribute('href','CSS/modularCss/s'+6+'.css')   
+    document.querySelector('#jobStyle').setAttribute('href','CSS/modularCss/s'+8+'.css')   
     
     // this will load the html content
     jobDisplayDiv.innerHTML = `
     <!-- page 3 _03_08_2021_-->
-        <div id="pc3" class="pageContent">
-          <img
-            src="source/images/random/bebe_codding.JPG"
-            alt="baby boy"
-            width="300px"
-            style="box-shadow: 10px 10px 15px grey"
-          />
+          <div id="box1">    <img
+          src="source/images/random/bebe_codding.JPG"
+          alt="baby boy"
+          width="300px"
+          style="box-shadow: 10px 10px 15px grey"
+        /> </div>
+
+        <div id="box2">
           <br />
           <br />
           Today is a great day,it's my birthday, in a tuesday like this one, at
