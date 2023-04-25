@@ -1,62 +1,37 @@
 
+.page{
+  background-color: #f7f7f7;
+  color: rgb(0, 0, 0);
+  flex-direction: column;
+  justify-content: center;
+  font-family: 'Alegreya', serif;
+  border:Solid orange 3px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  /* width: 00px;
+  height: 200px; */
+}
 
-.jobDisplay{
-    background-color: rgb(93, 77, 183);
-    margin: 20px;
-    flex-grow: 1;
-    justify-content:center;
-    flex-direction: column;
-    align-items:center;
-    position: relative; 
-    --cercle-width: 20px;
-    --cercle-height: 20px;
-    --cercle-position: 0;
-    --play-state: paused ;
-    --time:1s;
-    }
-  
-  
-    .line{
-      margin-top: 40px;
-      position: relative;
-      background-color: rgb(122, 17, 87);
-      border-radius: 3px;
-      width:400px;
-      height: 10px; 
-    }
-  
-    .cercle{
-      
-      position: absolute;
-      background-color:  rgb(46, 146, 185);
-      width:var(--cercle-width);
-      height: var(--cercle-height);  
-      transform:   translate( calc((var(--cercle-width) / -2) + 100px * var(--cercle-position)) ,  calc(var(--cercle-height) / -4)  );
-      border-radius: 100%;
-      transition: transform 1s ease-in-out;
-      
-    }
-  
-    .spinner{
-      margin-top: 40px;
-      position: relative;
-      background-color: rgb(185, 46, 166);
-      border-radius: 3px;
-      width: 20px;
-      height: 10px;
-      color: red;   
-      animation: my-animation 1000ms  var(--play-state)   infinite ; 
-    }
-  
-  
-    
-  
-    @keyframes my-animation {
-      100%{ transform: rotateZ(5turn)}     
-    }
-  
-    button::after {
-      content: var(--tooltip-string);
-      color: var(--tooltip-color);
-      font-size: var(--tooltip-font-size);
-    }
+.active{
+  display: flex;
+}
+
+.book{
+  display: flex;
+  border: solid yellowgreen;
+  padding: 10px;  
+}
+
+.translate{
+animation: myAnimation 2s ;  
+}
+
+@keyframes myAnimation{
+  50%{
+    transform: translate(100px);
+    /* transform: rotateY(.5turn); */
+
+  }
+}

@@ -1,7 +1,7 @@
 let f9= ()=>{
     console.log('f9 is running')
     // this will load the style for the job 
-    document.querySelector('#jobStyle').setAttribute('href','CSS/modularCss/s'+6+'.css')   
+    document.querySelector('#jobStyle').setAttribute('href','CSS/modularCss/s'+9+'.css')   
     
     // this will load the html content
     jobDisplayDiv.innerHTML = `

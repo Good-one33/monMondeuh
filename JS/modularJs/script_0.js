@@ -1,58 +1,63 @@
+let f0 = () => {
+  console.log("f0");
+  document
+    .querySelector("#jobStyle")
+    .setAttribute("href", "CSS/modularCss/s" + 0 + ".css");
+  jobDisplayDiv.innerHTML = `       
+ <div class="book">
 
 
+<div class="page active">always used to write but this time I made it
+public, I just wanted to improve my english I decided three days ago
+to work on my self, I often make such decisions but this time I am
+taking it seriously, from today and so on I will always write where
+ever I am, even if</div>
 
-let f0 = ()=>{
-    console.log('f0')
-    document.querySelector('#jobStyle').setAttribute('href','CSS/modularCss/s'+0+'.css')
-    jobDisplayDiv.innerHTML = ` 
-    <div class="control">
-         <button id="btn_prv"  >previous</button> 
-         <button id="btn_next">next</button></div>   
-     <div class="line">
-         <div class="cercle"></div>
-     </div>    
-     <div class="spinner">    
-     </div>`
-  
-  
-      
-          const jobDisplay = document.querySelector('.jobDisplay')
-          jobDisplay.style.setProperty('--cercle-position', 0)
-  
-          jobDisplay.addEventListener('click', e=>{         
-              if(e.target.matches("#btn_next")){
-              let current_cercle_position = jobDisplay.style.getPropertyValue('--cercle-position')
-              if(current_cercle_position <= 3){
-                  current_cercle_position++
-                  jobDisplay.style.setProperty('--cercle-position', current_cercle_position)
-                  play()               
-               }
-              }
-  
-  
-             if(e.target.matches("#btn_prv")){
-                  let current_cercle_position = jobDisplay.style.getPropertyValue('--cercle-position')
-             if(current_cercle_position >= 1){
-             current_cercle_position--
-      
-             jobDisplay.style.setProperty('--cercle-position', current_cercle_position)
-              play()
-              }
-              }
-          
-          })
-             let play = ()=>{
-             
-                  jobDisplay.querySelector('.spinner').style.setProperty('--play-state','running')
-                  setTimeout(pause, 1000)
-              }
-              
-              let pause = ()=>{
-             
-                  jobDisplay.querySelector('.spinner').style.setProperty('--play-state','paused')
-                
-              }
-  
-     
-  }
-  
+<div class="page">I am a page two</div>
+<div class="page"> always used to write but this time I made it
+public, I just wanted to improve my english I decided three days ago
+to work on my self, I often make such decisions but this time I am
+taking it seriously, from today and so on I will always write where
+ever I am, even if I</div>
+<div class="page">I am a page four</div>
+<div class="page"> always used to write but this time I made it
+public, I just wanted to improve my english I decided three days ago
+to work on my self, I often make such decisions but this time I am
+taking it seriously, from today and so on I will always write where
+ever I am, even if I</div>
+</div> 
+<button id="Nextbtn">Next</button>
+<button id="Prevbtn">Prev</button>
+`;
+
+let Nextbtn = document.querySelector("#Nextbtn");
+let Prevbtn = document.querySelector("#Prevbtn");
+let pages = document.querySelectorAll(".page");
+let activePageIndex;
+
+pages.forEach((page, indexPage) => {
+console.log(page);
+if (page.classList.contains("active")) {
+    activePageIndex = indexPage;
+}
+});
+
+Nextbtn.addEventListener("click", (e) => {
+    let pages = document.querySelectorAll(".page");
+    if (activePageIndex < pages.length-1) { 
+        pages[activePageIndex].classList.remove("active");       
+        pages[activePageIndex + 1].classList.add("active"); 
+        pages[activePageIndex ].classList.add("translate")       
+        pages[activePageIndex + 1].classList.add("translate");       
+        activePageIndex++;       
+    }
+});
+
+Prevbtn.addEventListener("click", (e) => {
+   if (activePageIndex > 0) {
+   pages[activePageIndex].classList.remove("active");
+   pages[activePageIndex - 1].classList.add("active");
+   activePageIndex--;
+    }
+});
+};
