@@ -1,26 +1,12 @@
 let f5 = ()=>{
-
-    jobDisplayDiv.innerHTML = `<!-- page 6 _21_12_2021_-->
-    <div id="pc6" class="pageContent">
-      <div id="pc6demo1"></div>
-      <div id="pc6demo">coucou it's me f5, Iam runnning !</div>`
-
-    let menu = {
-        width: 200,
-        height: 300,
-        title: "My menu"
-      };
-
-
-let multiplyNumeric = obj => {
-    for (let key in obj){
-        console.log(key + " : "+ obj[key] );
-        obj[key] = obj[key]*2;
-        console.log(key + " : "+ obj[key] );
-
-    }
-} 
-
-multiplyNumeric(menu);
+  console.log('f6 is running')
+  // this will load the style for the job 
+  document.querySelector('#jobStyle').setAttribute('href','CSS/modularCss/s'+5+'.css')   
+  
+  // this will load the html content
+  jobDisplayDiv.innerHTML = `
+  <div> f5 is running </div>
+  `
+  // this is the js code running for this job 
 
 }////////// don't delete me 
