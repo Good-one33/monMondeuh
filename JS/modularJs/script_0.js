@@ -7,6 +7,7 @@ let f0 = () => {
  <div class="book">
  <div class="bookNavigation">
  <button id="Prevbtn">Prev</button>
+ <div id="bookIconAnimation"> </div>
  <button id="Nextbtn">Next</button>
  </div>
 
@@ -149,33 +150,54 @@ person I always wanted to be,<br />
 </div> 
 `;
 
-let Nextbtn = document.querySelector("#Nextbtn");
-let Prevbtn = document.querySelector("#Prevbtn");
-let pages = document.querySelectorAll(".page");
-let activePageIndex;
+  let Nextbtn = document.querySelector("#Nextbtn");
+  let Prevbtn = document.querySelector("#Prevbtn");
+  let pages = document.querySelectorAll(".page");
+  let activePageIndex;
+  let bookJobDiv = document.getElementById("bookIconAnimation");
 
-pages.forEach((page, indexPage) => {
-console.log(page);
-if (page.classList.contains("active")) {
-    activePageIndex = indexPage;
-}
-});
+  pages.forEach((page, indexPage) => {
+    console.log(page);
+    if (page.classList.contains("active")) {
+      activePageIndex = indexPage;
+    }
+  });
+  var jobAnimation = bodymovin.loadAnimation({
+    container: bookJobDiv,
+    path: "https://maxst.icons8.com/vue-static/landings/animated-icons/icons/book/book.json",
+    renderer: "svg",
+    loop: false,
+    autoplay: false,
+  });
 
-Nextbtn.addEventListener("click", (e) => {
+  Nextbtn.addEventListener("click", (e) => {
     let pages = document.querySelectorAll(".page");
-    if (activePageIndex < pages.length-1) { 
-        pages[activePageIndex].classList.remove("active"); 
-        pages[activePageIndex+1].classList.add("active"); 
-        activePageIndex++;       
+    if (activePageIndex < pages.length - 1) {
+      pages[activePageIndex].classList.remove("active");
+      pages[activePageIndex + 1].classList.add("active");
+      activePageIndex++;
+      if (state === "play") {
+        jobAnimation.playSegments([27, 0], true);
+        state = "pause";
+      } else {
+        jobAnimation.playSegments([27, 0], true);
+        state = "play";
+      }
     }
-});
+  });
 
-Prevbtn.addEventListener("click", (e) => {
-   if (activePageIndex > 0) {
-   pages[activePageIndex].classList.remove("active");
-   pages[activePageIndex-1].classList.add("active"); 
-
-   activePageIndex--;
+  Prevbtn.addEventListener("click", (e) => {
+    if (activePageIndex > 0) {
+      pages[activePageIndex].classList.remove("active");
+      pages[activePageIndex - 1].classList.add("active");
+      activePageIndex--;
+      if (state === "play") {
+        jobAnimation.playSegments([0, 27], true);
+        state = "pause";
+      } else {
+        jobAnimation.playSegments([0, 27], true);
+        state = "play";
+      }
     }
-});
+  });
 };

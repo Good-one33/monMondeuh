@@ -13,10 +13,10 @@ var animation = bodymovin.loadAnimation({
 let jobsDiv = document.querySelector('.jobs')
 let jobDisplayDiv = document.querySelector('.jobDisplay')
 /*putting all job's divs in an array
-  adding some attributes to each item in the list
-  dynamically adding a  script link to the  file  in js folder
-  adding the function handler for each job's box , this will control evrything in the JobDisplay div
-  looping through all jobs and remove the selected class and add it only to the selected one 
+  -adding some attributes to each item in the list
+  -dynamically adding a  script link to the  file  in js folder
+  -adding the function handler for each job's box , this will control evrything in the JobDisplay div
+  -looping through all jobs and remove the selected class and add it only to the selected one 
 */
 let jobs = Array.from(jobsDiv.children)   
 
@@ -31,12 +31,12 @@ jobs.forEach(job => {
        path = "https://maxst.icons8.com/vue-static/landings/animated-icons/icons/pause/pause.json";
     }else if (job.classList.contains('read')){
        path = "https://maxst.icons8.com/vue-static/landings/animated-icons/icons/book/book.json";
-    }else {
+    }else { //default animation  DJ mix !
        path = "https://maxst.icons8.com/vue-static/landings/animated-icons/icons/adjust/adjust.json";
     }
     var jobAnimation = bodymovin.loadAnimation({
       container: container,
-      path:path,                                                                              //"https://maxst.icons8.com/vue-static/landings/animated-icons/icons/pause/pause.json",
+      path:path,           
       renderer: "svg",
       loop: false,
       autoplay: false,

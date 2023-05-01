@@ -1,59 +1,46 @@
-.jobDisplay{
+.jobDisplay {
   /* border: solid orange 5px; */
   background-color: #f7f7f7;
   color: rgb(0, 0, 0);
   display: inline;
-
-
 }
-.book{
+.book {
   display: flex;
   flex-direction: column;
   align-items: center;
   /* border: solid yellowgreen; */
-  padding: 10px;  
-
-
+  padding: 10px;
 }
-.bookNavigation{
-/* border: solid yellowgreen; */
-display: flex;
-justify-content: space-around;
-width: 30%;
+.bookNavigation {
+  /* border: solid yellowgreen; */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 50%;
+  height:5%;
+}
+#Nextbtn ,#Prevbtn{
+  height: 10%;
 }
 
+#bookIconAnimation{ 
+   width: 30%;
+}
 
-.page{
+.page {
   /* border:Solid orange 3px; */
   color: rgb(0, 0, 0);
   flex-direction: column;
   justify-content: center;
-  font-family: 'Alegreya', serif;
+  font-family: "Alegreya", serif;
   display: none;
   align-items: center;
   justify-content: center;
   margin-bottom: 10px;
   padding-top: 20px;
-
 }
 
-.active{
+.active {
   display: flex;
   transition: display 3s;
-
 }
-
-
-
- /* .translate{
-animation: myAnimation 2s;
-animation-fill-mode: forwards;  
-}
-
-@keyframes myAnimation{
-  50%{
-    transform: translate(100px);
-    transform: rotateY(.5turn);
-
-  }
-} */
