@@ -4,6 +4,7 @@
   color: rgb(0, 0, 0);
   display: inline;
 }
+
 .book {
   display: flex;
   flex-direction: column;
@@ -11,20 +12,31 @@
   /* border: solid yellowgreen; */
   padding: 10px;
 }
+
 .bookNavigation {
   /* border: solid yellowgreen; */
   display: flex;
   justify-content: space-around;
   align-items: center;
   width: 50%;
-  height:5%;
+  height: 5%;
 }
-#Nextbtn ,#Prevbtn{
+
+#Nextbtn,
+#Prevbtn {
   height: 10%;
 }
 
-#bookIconAnimation{ 
-   width: 30%;
+.icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+}
+
+#bookIconAnimation {
+  width: 90%;
 }
 
 .page {
