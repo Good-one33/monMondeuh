@@ -1,19 +1,14 @@
 .jobDisplay{
-    background-color:  rgb(158, 54, 127);
-}
-
-
-.jobDisplay{
     background-color: aquamarine;
     flex-direction: column;
 }
-
-
-.red{
-    background-color: red;
+.J1_inputContainer{
+    border: solid 2px orange;
+    display: flex;
+    justify-content: space-around;
+    width: 50%;
+    
 }
-
-.blue{
-    background-color: blue;
+.J1_input{
+    width:40%;
 }
-
