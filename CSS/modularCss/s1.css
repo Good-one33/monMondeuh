@@ -1,14 +1,32 @@
 .jobDisplay{
     background-color: aquamarine;
     flex-direction: column;
+    padding: 1%;
 }
 .J1_inputContainer{
     border: solid 2px orange;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     width: 50%;
-    
 }
 .J1_input{
-    width:40%;
+    width:10%;
+    margin: 0 10px 0 10px;
+}
+.initialList{
+    border: solid 2px rgb(11, 124, 26);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+}
+
+.listItem{
+    background-color: rgb(110, 35, 65);
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    margin: 0 10px 0 10px;;
+    
 }

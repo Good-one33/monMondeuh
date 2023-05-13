@@ -12,44 +12,83 @@ let f1 = () => {
         <input type="number" class="J1_input" >
         <input type="number" class="J1_input" >
         </div>
+        <div class="initialList"></div>
     `;
   //the code running for the job
-  let objectIds = [
-    1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21,
-    22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40,
+  //¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤ getSublists ¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤
+  // this function take an iniital list and returns another list containing sublist with a length defined in the second argument
+  function getSublists(initialList, subListLength) {
+    let resultList = [];
+    console.log("initial List " + initialList);
+    let count = 0;
+    let subListMax = subListLength; // in beggining it is equal to sublistLength but it will changes each loop 
+    let maxNbrSubList;
+    if (initialList.length % subListLength != 0) {
+      maxNbrSubList = Math.floor(initialList.length / subListLength) + 1;
+    } else {
+      maxNbrSubList = Math.floor(initialList.length / subListLength);
+    }
+    if (subListLength > initialList.length) {
+      subListMax = initialList.length;
+    }
+
+    for (let i = 1; i <= maxNbrSubList; i++) {
+      let mySubList = [];
+      for (let j = count; j < subListMax; j++) {
+        mySubList.push(initialList[j]);
+        count++;
+      }
+      subListMax = subListMax + subListLength;
+      if (subListMax > initialList.length) {
+        subListMax = initialList.length;
+      }
+      resultList.push(mySubList);
+    }
+
+    resultList.forEach((subList) => {
+      console.log(subList);
+    });
+  }
+
+  //¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤ insertItemsToList ¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤
+  //funciton to create and insert elements to a list
+  let insertItemsToList = (classListName, nbr) => {
+    let list = document.querySelector("." + classListName);
+    for (let i = 1; i <= nbr; i++) {
+      let listItem = document.createElement("div");
+      listItem.classList.add("listItem");
+      list.appendChild(listItem);
+    }
+  };
+
+  //¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤ emptyList ¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤
+  //funciton to create and insert elements to a list
+  let emptyList = (classListName) => {
+    let list = document.querySelector("." + classListName);
+    let listItems =  [].slice.call(list.children);
+    listItems.forEach(child =>{
+      child.remove()
+    })
+  };
+
+  // let objectIds = ["1", "2", "1", "2", "1", "2", "1", "2", "1", "2", "1", "2"];
+  // getSublists(objectIds, 3);
+  let inputs = document.querySelectorAll(".J1_input");
+
+  inputs[0].addEventListener("change", () => {
+    emptyList("initialList");
+    insertItemsToList("initialList", inputs[0].value);  
+
+  });
+
+  inputs[1].addEventListener("change", () => {
+    let list = document.querySelector(".initialList");
+    let listItems =  [].slice.call(list.children);
+     getSublists(listItems, inputs[1].value) 
     
-  ];
-
-  let myList = [];
-  console.log(objectIds.length);
-  let compteur = 0;
-  let cpuMax = 6;
-  let subListMax = cpuMax;
-  let maxNbrSubList ;
-  if((objectIds.length % cpuMax) != 0){
-    maxNbrSubList = Math.floor(objectIds.length / cpuMax) + 1
-  } else{
-    maxNbrSubList = Math.floor(objectIds.length / cpuMax) 
-  }
-
-  for (let i = 1; i <= maxNbrSubList; i++) {
-    let mySubList = [];
-    for (let j = compteur; j < subListMax; j++) {
-      mySubList.push(objectIds[j]);
-      compteur++;
-    }
-    subListMax = subListMax + cpuMax;
-    if (subListMax > objectIds.length) {
-      subListMax = objectIds.length;
-    }
-    myList.push(mySubList);
-  }
-
-  myList.forEach(subList => {
-    console.log(subList)
-  })
 
 
+  });
 
   // this is the js code running for this job
 };
