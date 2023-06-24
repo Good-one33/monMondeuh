@@ -7,16 +7,26 @@ let f1 = () => {
 
   // this will load the html content
   jobDisplayDiv.innerHTML = `
-        Hello I am script one
-        <div class="J1_inputContainer">
+        <div class="J1_controlContainer">
+        <div class="J1_subContainer_1">
+        <div class="J1_subContainer_2">
+        Nbr of Items
         <input type="number" class="J1_input" min="0" max="100" value="10">
+        </div>
+        <div class="J1_subContainer_2">
+        Row length
         <input type="number" class="J1_input" min="1" max="100" value="2">
+        </div>
+        </div>
+        <div class="J1_subContainer_1">
+        <button>Generate</button>
+        </div>
         </div>
         <div class="initialList"></div>
         <div class="sublistsContainer"></div>
     `;
   //the code running for the job
-  //---------------------< getSublists >----------------this function take an iniital list and returns another list containing sublist with a length defined in the second argument
+  //---------------------< getSublists >----------------this function takes an initial list and returns another list containing sublist with a length defined in the second argument
   function getSublists(initialList, subListLength) {
     let resultList = [];
     //console.log("initial List " + initialList);
