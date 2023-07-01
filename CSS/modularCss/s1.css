@@ -40,7 +40,8 @@
 
 .initialList,
 .subList {
-  padding:5px 0 10px 0 ;
+  padding: 5px 0 10px 0;
+  border-bottom: solid 1px red;
 }
 
 .listItem {
