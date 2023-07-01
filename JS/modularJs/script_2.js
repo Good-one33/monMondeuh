@@ -6,7 +6,7 @@ let f2 = () => {
     .setAttribute("href", "CSS/modularCss/s" + 2 + ".css");
   // this will load the html content
   jobDisplayDiv.innerHTML = `
-    <div class="fakeBody">      
+    <div class="jobDisplay">      
     <div class="navbar-container">
         <ul class="list">
             <div  data-indicator class="indicator" style="--position: 0;">
@@ -45,10 +45,10 @@ let f2 = () => {
     </div> 
   `;
 
-  let fakeBody = document.querySelector(".fakeBody");
-  const indicator = fakeBody.querySelector("[data-indicator]");
+  let jobDisplay = document.querySelector(".jobDisplay");
+  const indicator = jobDisplay.querySelector("[data-indicator]");
 
-  fakeBody.addEventListener("click", (e) => {
+  jobDisplay.addEventListener("click", (e) => {
     let anchor;
     if (e.target.matches("a")) {
       anchor = e.target;
@@ -57,10 +57,10 @@ let f2 = () => {
     }
 
     if (anchor != null) {
-      const allAnchors = [...fakeBody.querySelectorAll("a")];
+      const allAnchors = [...jobDisplay.querySelectorAll("a")];
       const index = allAnchors.indexOf(anchor);
       indicator.style.setProperty("--position", index);
-      fakeBody.querySelectorAll("a").forEach((elem) => {
+      jobDisplay.querySelectorAll("a").forEach((elem) => {
         elem.classList.remove("active");
       });
       anchor.classList.add("active");
