@@ -5,8 +5,7 @@ let f2 = () => {
     .querySelector("#jobStyle")
     .setAttribute("href", "CSS/modularCss/s" + 2 + ".css");
   // this will load the html content
-  jobDisplayDiv.innerHTML = `
-    <div class="jobDisplay">      
+  jobDisplayDiv.innerHTML = `     
     <div class="navbar-container">
         <ul class="list">
             <div  data-indicator class="indicator" style="--position: 0;">
@@ -41,7 +40,6 @@ let f2 = () => {
     </div>
     <div class="text">Camera</div></a>
     </li>
-    </div>   
     </div> 
   `;
 

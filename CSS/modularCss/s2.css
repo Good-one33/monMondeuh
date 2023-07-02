@@ -16,8 +16,7 @@
   background-color: white;
   border-radius: var(--border-radius);
   width: max-content;
-  margin: 50px auto;
-  padding: 0 calc(var(--nav-item-padding) * 1.5);
+  padding: 0 calc(var(--nav-item-padding) * 1.2);
 }
 
 .list {
