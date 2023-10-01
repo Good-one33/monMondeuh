@@ -9,7 +9,6 @@ body {
 }
 
 .cardContainer {
-  /* border: red solid 3px; */
   display: flex;
   justify-content: center;
   padding: 3rem;
@@ -45,8 +44,26 @@ body {
   transform: translateX(5rem);
 }
 
+.containerOne {
+  display: flex;
+  flex-direction: column;
+  padding: 0vh 4vw 0vh 4vw;
+  height: 100vh;
+  width: 90%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.block {
+  width: 100%;
+  flex-grow: 1;
+}
+
 /* carousel*/
 .carousel {
+  display: flex;
+  flex-direction: row;
   width: 100%;
   height: 100%;
   position: relative;
@@ -57,7 +74,13 @@ body {
   padding: 0;
   list-style: none;
 }
+
 .slide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
   position: absolute;
   inset: 0;
   opacity: 0;
@@ -66,7 +89,7 @@ body {
 }
 .slide > img {
   display: block;
-  width: 100%;
+  max-width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
@@ -110,28 +133,9 @@ body {
   right: 1rem;
 }
 
-.containerOne {
-  border: rgb(111, 255, 0) solid 2px;
-  display: flex;
-
-  padding: 0vh 4vw 0vh 4vw;
-  height: 100vh;
-  width: 90%;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.block {
-  /* border: orange solid 2px; */
-  width: 100%;
-  height: 100%;
-}
-
 /* navigation controller*/
 
 .navigContainer {
-  /* border: rgb(4, 19, 4) solid 4px; */
   position: relative;
   display: flex;
   justify-content: center;
@@ -168,7 +172,6 @@ body {
 
 .timeLine {
   position: relative;
-  /* border: solid orangered 1px; */
   background-color: rgb(97, 14, 79);
   color: rgb(25, 230, 25);
   border-radius: 15px;
@@ -229,7 +232,6 @@ body {
 /* Header*/
 
 .Header {
-  /* border: red 2px solid; */
   position: sticky;
   top: 0px;
   z-index: 4;
@@ -239,7 +241,6 @@ body {
   /* padding:2%; */
 }
 .Header ul {
-  /* border: rgb(84, 140, 175) 2px solid; */
   display: flex;
   justify-content: space-between;
 
@@ -253,7 +254,6 @@ body {
   color: rgb(255, 254, 254);
   text-align: center;
   text-decoration: none;
-  border: 2px solid rgb(130, 25, 11);
   border-radius: 15px;
   padding: 1px 10px 1px 10px;
   background: rgb(3, 3, 4);
@@ -266,11 +266,9 @@ body {
 }
 
 #mainWelcomeSngContainer {
-  /* border: rgb(80, 210, 136) 2px solid; */
   /* z-index:1 ; */
   position: relative;
   width: 100%;
   height: 400px;
   background-color: rgb(12, 12, 12);
-  /* border-radius: 10px; */
 }
