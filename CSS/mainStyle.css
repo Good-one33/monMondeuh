@@ -94,6 +94,7 @@ body {
   object-fit: cover;
   object-position: center;
   border-radius: 20px;
+  box-shadow: 0px 0px 5px 0px;
 }
 
 .slide[data-active] {
@@ -172,29 +173,47 @@ body {
 
 .timeLine {
   position: relative;
-  background-color: rgb(97, 14, 79);
   color: rgb(25, 230, 25);
+  background-color: rgb(70 158 146);
   border-radius: 15px;
   height: calc(var(--element-height) * 0.5);
   width: calc(var(--time-line-width) * 1px);
+  box-shadow: 0px 0px 5px 0px black;
+  
 }
 
 .staticElement {
   position: absolute;
-  background-color: rgb(14, 97, 86);
   border-radius: 100px;
+  background-color: rgb(70 158 146);
   height: calc(var(--element-height));
   width: var(--element-width);
   writing-mode: vertical-rl;
   text-orientation: upright;
+  box-shadow: 0px 0px 5px 0px black;
 }
 
-.info {
-  /* border: solid rgb(168, 20, 82) 1px; */
+.movingElement {
   position: absolute;
-  /* display: flex;
-    justify-content: center;
-    align-items: center; */
+  z-index: 1;
+  background-color: #43bf91;
+  border-radius: 100px;
+  height: calc(var(--element-height) * 1);
+  width: var(--element-width);
+  transform: translate(
+    calc(
+      (var(--element-width) / -2) + var(--time-line-jumpe) * 1px *
+        var(--moving-element-position)
+    ),
+    calc(var(--element-height) / -4)
+  );
+  transition: transform 300ms ease-in-out;
+  box-shadow: 0px 0px 5px 0px black;
+
+}
+
+.info {  
+  position: absolute;
   color: rgb(10, 10, 10);
   writing-mode: horizontal-tb;
 }
@@ -212,23 +231,7 @@ body {
   font-size: 10pt;
 }
 
-.movingElement {
-  border: solid rgb(61, 158, 32) 1px;
-  position: absolute;
-  z-index: 1;
-  background-color: brown;
-  border-radius: 100px;
-  height: calc(var(--element-height) * 1);
-  width: var(--element-width);
-  transform: translate(
-    calc(
-      (var(--element-width) / -2) + var(--time-line-jumpe) * 1px *
-        var(--moving-element-position)
-    ),
-    calc(var(--element-height) / -4)
-  );
-  transition: transform 300ms ease-in-out;
-}
+
 /* Header*/
 
 .Header {
