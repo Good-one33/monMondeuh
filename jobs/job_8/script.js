@@ -1,11 +1,11 @@
-let f7 = ()=>{
-  console.log('f6 is running')
+let f8 = ()=>{
+  console.log('f8 is running')
   // this will load the style for the job 
-  document.querySelector('#jobStyle').setAttribute('href','CSS/modularCss/s'+7+'.css')   
+  document.querySelector("#jobStyle").setAttribute("href", "jobs/job_"+ 8 +"/style.css");  
   
   // this will load the html content
   jobDisplayDiv.innerHTML = `
-  <div> f7 is running </div>
+  <div> f8 is running </div>
   `
   // this is the js code running for this job 
 

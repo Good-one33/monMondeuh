@@ -1,8 +1,8 @@
 let f0 = () => {
   console.log("f0");
-  document
-    .querySelector("#jobStyle")
-    .setAttribute("href", "CSS/modularCss/s" + 0 + ".css");
+  // document.querySelector("#jobStyle").setAttribute("href", "CSS/modularCss/s" + 0 + ".css");
+  document.querySelector("#jobStyle").setAttribute("href", "jobs/job_"+ 0 +"/style.css");
+
   jobDisplayDiv.innerHTML = `       
   <div class="book">
   <div class="bookNavigation">

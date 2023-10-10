@@ -1,7 +1,7 @@
 let f4 = ()=>{
     console.log('f4 is running')
     // this will load the style for the job 
-    document.querySelector('#jobStyle').setAttribute('href','CSS/modularCss/s'+6+'.css')   
+    document.querySelector("#jobStyle").setAttribute("href", "jobs/job_"+ 4 +"/style.css");
     
     // this will load the html content
     jobDisplayDiv.innerHTML = `<!-- page 6 _21_12_2021_-->

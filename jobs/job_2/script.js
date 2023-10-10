@@ -1,9 +1,7 @@
 let f2 = () => {
   console.log("f2 is running");
   // this will load the style for the job
-  document
-    .querySelector("#jobStyle")
-    .setAttribute("href", "CSS/modularCss/s" + 2 + ".css");
+  document.querySelector("#jobStyle").setAttribute("href", "jobs/job_"+ 2 +"/style.css");
   // this will load the html content
   jobDisplayDiv.innerHTML = `     
     <div class="navbar-container">

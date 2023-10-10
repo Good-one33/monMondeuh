@@ -12,7 +12,7 @@ var animation = bodymovin.loadAnimation({
 
 let jobsDiv = document.querySelector('.jobs')
 let jobDisplayDiv = document.querySelector('.jobDisplay')
-/*putting all job's divs in an array
+/*putting all jobs' divs in an array
   -adding some attributes to each item in the list
   -dynamically adding a  script link to the  file  in js folder
   -adding the function handler for each job's box , this will control evrything in the JobDisplay div
@@ -24,7 +24,7 @@ let jobs = Array.from(jobsDiv.children)
 jobs.forEach(job => {  
   job.innerHTML ='<div class="animationContainer"></div> <div class="hide">'+job.id+'</div>';
   let container = document.getElementById(job.id).children[0];
-  let path 
+  let path; 
     if(job.classList.contains('code') ){
        path = "https://maxst.icons8.com/vue-static/landings/animated-icons/icons/settings/settings.json";
     }else if (job.classList.contains('play')){
@@ -43,7 +43,6 @@ jobs.forEach(job => {
     });
     jobAnimation.goToAndStop(14, true);
 
-
     container.addEventListener('click', e => {
       if(state === 'play') {
         jobAnimation.playSegments([14, 27], true);
@@ -61,12 +60,14 @@ jobs.forEach(job => {
         
          })
         container.parentNode.classList.toggle('selected') 
-/       container.parentNode.children[1].classList.toggle('jobNbr')
+        container.parentNode.children[1].classList.toggle('jobNbr')
         container.parentNode.classList.add('alreadyChecked')
 
     });
 
-  document.head.appendChild(document.createElement('script')).setAttribute('src','JS/modularJs/script_'+job.id +'.js')
+  //document.head.appendChild(document.createElement('script')).setAttribute('src','JS/modularJs/script_'+job.id +'.js')
+  document.head.appendChild(document.createElement('script')).setAttribute('src','jobs/job_'+job.id +'/script.js')
+
   let child = document.createElement('div').classList.add('item')  
 })
 

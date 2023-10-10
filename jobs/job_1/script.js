@@ -1,9 +1,7 @@
 let f1 = () => {
   console.log("f1");
   // this will load the style for the job
-  document
-    .querySelector("#jobStyle")
-    .setAttribute("href", "CSS/modularCss/s" + 1 + ".css");
+  document.querySelector("#jobStyle").setAttribute("href", "jobs/job_"+ 1 +"/style.css");
 
   // this will load the html content
   jobDisplayDiv.innerHTML = `

@@ -1,7 +1,7 @@
 let f5 = ()=>{
   console.log('f5 is running')
   // this will load the style for the job 
-  document.querySelector('#jobStyle').setAttribute('href','CSS/modularCss/s'+5+'.css')   
+  document.querySelector("#jobStyle").setAttribute("href", "jobs/job_"+ 5 +"/style.css");
   
   // this will load the html content
   jobDisplayDiv.innerHTML = `
