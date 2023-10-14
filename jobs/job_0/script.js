@@ -12,9 +12,84 @@ let f0 = () => {
       <div id="bookIconPage">1/5</div>
     </div>
     <button id="Nextbtn">Next</button>
+  </div>  
+  <div class="page p_0 active">
+  <H1> Nouvel horizon </H1>
+  Il était dans la gare à attendre le train pour changer de ville et à commencer son nouveau travail, l'esprit un peu troublé, aller vers de
+  nouveaux horizons et abandonner tout dérrière est devenu une habitude pour lui. Il était assis dans son coin à observer
+  les gens, tous occupés ou pris par quelque chose,  parmi eux il y avait une personne qui jouait du piano. La  musique était triste et
+  pleine de chagrin.
+  Notre héros qui est de nature joyeux et  enthousiaste devenait petit à petit au rythme de la musique, songeur et commençait à rentrer dans
+  une sorte de mélancolie profonde. à un moment donné il a perdu toute notion d'espace, rien ne gravitait au tour de lui, tout 
+  était muet et immobile.</br>
+  Surpris par l'enchaînement des évènements et l'état dans lequel il s'est retrouvé, il ne savait pas trop quoi faire, cependant et malgré lui,
+   il s'est mis à  réfléchir sur son avenir et à se poser des questions sur sa raison d'être. Il a fermé ses  yeux est allé au fond de son âme
+    en espérant revenir avec une réponse mais à sa grande surprise, il n'y avait rien, c'était le néant absolu
   </div>
+</div>
 
-  <div class="page p_0 ">
+`;
+
+  let Nextbtn = document.querySelector("#Nextbtn");
+  let Prevbtn = document.querySelector("#Prevbtn");
+  let pages = document.querySelectorAll(".page");
+  let activePageIndex;
+  let bookJobDiv = document.getElementById("bookIconAnimation");
+  let bookIconPage = document.getElementById("bookIconPage");
+
+  pages.forEach((page, indexPage) => {
+    console.log(page);
+    if (page.classList.contains("active")) {
+      activePageIndex = indexPage;
+      bookIconPage.innerText = indexPage + "/" + (pages.length - 1);
+    }
+  });
+  var jobAnimation = bodymovin.loadAnimation({
+    container: bookJobDiv,
+    path: "https://maxst.icons8.com/vue-static/landings/animated-icons/icons/book/book.json",
+    renderer: "svg",
+    loop: false,
+    autoplay: false,
+  });
+
+  Nextbtn.addEventListener("click", (e) => {
+    let pages = document.querySelectorAll(".page");
+    if (activePageIndex < pages.length - 1) {
+      pages[activePageIndex].classList.remove("active");
+      pages[activePageIndex + 1].classList.add("active");
+      activePageIndex++;
+      bookIconPage.innerText = activePageIndex + "/" + (pages.length - 1);
+      if (state === "play") {
+        jobAnimation.playSegments([27, 0], true);
+        state = "pause";
+      } else {
+        jobAnimation.playSegments([27, 0], true);
+        state = "play";
+      }
+    }
+  });
+
+  Prevbtn.addEventListener("click", (e) => {
+    if (activePageIndex > 0) {
+      pages[activePageIndex].classList.remove("active");
+      pages[activePageIndex - 1].classList.add("active");
+      activePageIndex--;
+      bookIconPage.innerText = activePageIndex + "/" + (pages.length - 1);
+      if (state === "play") {
+        jobAnimation.playSegments([0, 27], true);
+        state = "pause";
+      } else {
+        jobAnimation.playSegments([0, 27], true);
+        state = "play";
+      }
+    }
+  });
+};
+
+
+
+/*
+<div class="page p_0 ">
     <div>
       Here we go !
       <br />
@@ -175,75 +250,4 @@ let f0 = () => {
       <i class="fas fa-cloud" style="font-size: 40px; color: lightblue"></i>
     </div>
   </div>
-  <div class="page p_5 active">
-  <H1> Nouvel horizon </H1>
-  Il était dans la gare à attendre le train pour changer de ville et commencer son nouveau travail, l'esprit un peu troublé, aller vers de
-  nouveaux horizons et abandonner tout dérrière est devenu une habitude pour lui. Il était assis dans son coin à observer
-  les gens, tous occupés ou pris par quelque chose,  parmi eux il y avait une personne qui jouait du piano. La  musique était triste et
-  pleine de chagrin.
-  Notre héros qui est de nature joyeux et  enthousiaste devenait petit à petit au rythme de la musique, songeur et commençait à rentrer dans
-  une sorte de mélancolie profonde. à un moment donné il a perdu toute notion d'espace, rien ne gravitait au tour de lui, tout 
-  était muet et immobile.</br>
-  Surpris par l'enchaînement des évènements et l'état dans lequel il s'est retrouvé, il ne savait pas trop quoi faire, cependant et malgré lui,
-   il s'est mis à  réfléchir sur son avenir et à se poser des questions sur sa raison d'être. Il a fermé ses  yeux est allé au fond de son âme
-    en espérant revenir avec une réponse mais à sa grande surprise, il n'y avait rien, c'était le néant absolu
-  </div>
-</div>
-
-`;
-
-  let Nextbtn = document.querySelector("#Nextbtn");
-  let Prevbtn = document.querySelector("#Prevbtn");
-  let pages = document.querySelectorAll(".page");
-  let activePageIndex;
-  let bookJobDiv = document.getElementById("bookIconAnimation");
-  let bookIconPage = document.getElementById("bookIconPage");
-
-  pages.forEach((page, indexPage) => {
-    console.log(page);
-    if (page.classList.contains("active")) {
-      activePageIndex = indexPage;
-      bookIconPage.innerText = indexPage + "/" + (pages.length - 1);
-    }
-  });
-  var jobAnimation = bodymovin.loadAnimation({
-    container: bookJobDiv,
-    path: "https://maxst.icons8.com/vue-static/landings/animated-icons/icons/book/book.json",
-    renderer: "svg",
-    loop: false,
-    autoplay: false,
-  });
-
-  Nextbtn.addEventListener("click", (e) => {
-    let pages = document.querySelectorAll(".page");
-    if (activePageIndex < pages.length - 1) {
-      pages[activePageIndex].classList.remove("active");
-      pages[activePageIndex + 1].classList.add("active");
-      activePageIndex++;
-      bookIconPage.innerText = activePageIndex + "/" + (pages.length - 1);
-      if (state === "play") {
-        jobAnimation.playSegments([27, 0], true);
-        state = "pause";
-      } else {
-        jobAnimation.playSegments([27, 0], true);
-        state = "play";
-      }
-    }
-  });
-
-  Prevbtn.addEventListener("click", (e) => {
-    if (activePageIndex > 0) {
-      pages[activePageIndex].classList.remove("active");
-      pages[activePageIndex - 1].classList.add("active");
-      activePageIndex--;
-      bookIconPage.innerText = activePageIndex + "/" + (pages.length - 1);
-      if (state === "play") {
-        jobAnimation.playSegments([0, 27], true);
-        state = "pause";
-      } else {
-        jobAnimation.playSegments([0, 27], true);
-        state = "play";
-      }
-    }
-  });
-};
+*/
