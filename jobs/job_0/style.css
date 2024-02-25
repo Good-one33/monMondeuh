@@ -1,6 +1,6 @@
 .jobDisplay {
   /* border: solid orange 5px; */
-  background-color: #f7f7f7;
+  background-color: #1e8e95;
   color: rgb(0, 0, 0);
   display: inline;
 }
@@ -25,6 +25,9 @@
 #Nextbtn,
 #Prevbtn {
   height: 10%;
+  border: solid black 1px;
+  border-radius: 5px;
+  padding: 1px 3px 1px 3px;
 }
 
 .icon {
